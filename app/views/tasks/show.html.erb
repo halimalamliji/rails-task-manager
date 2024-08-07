@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-between">
+<h1><%= @task.title %></h1>
+<%= link_to "🖊️ Edit your task", edit_task_path %>
+</div>
+<div class="alert alert-secondary my-3" role="alert">
+  <%= @task.details %>
+</div>
+<div class="form-check my-4 border-bottom border-1 pb-4">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+    <label class="form-check-label" for="flexCheckIndeterminate">
+      Tâche effectuée
+    </label>
+</div>
+
+<%= link_to "Back to list", tasks_path, class:"btn btn-outline-primary"%>

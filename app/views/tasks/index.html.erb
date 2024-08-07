@@ -1,0 +1,21 @@
+<h1>My tasks:</h1>
+
+<div class="form-check my-4 border-bottom border-1 pb-4">
+  <% @tasks.each do |task| %>
+    <div>
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+       <label class="form-check-label" for="flexCheckIndeterminate">
+        <%= link_to task.title, task_path(task) %>
+      </label>
+      <%= link_to "🗑️",
+        task_path(id: task.id),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+      </div>
+    <% end %>
+</div>
+  <div class="my-3">
+    <%= link_to new_task_path do %>
+    <i class="fa-solid fa-square-plus"></i> Add a new task
+    <% end %>
+  </div>
